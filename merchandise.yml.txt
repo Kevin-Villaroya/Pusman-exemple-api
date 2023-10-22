@@ -1,0 +1,75 @@
+/merchandise:
+  get:
+    summary: Get merchandise information
+    responses:
+      '200':
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: Merchandise ID
+                name:
+                  type: string
+                  description: Merchandise name
+                size:
+                  type: string
+                  description: Merchandise size
+                price:
+                  type: number
+                  description: Merchandise price
+  post:
+    summary: Create a new merchandise
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Merchandise name
+              size:
+                type: string
+                description: Merchandise size
+              price:
+                type: number
+                description: Merchandise price
+    responses:
+      '201':
+        description: Merchandise created
+  patch:
+    summary: Update merchandise
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Merchandise name
+              size:
+                type: string
+                description: Merchandise size
+              price:
+                type: number
+                description: Merchandise price
+    responses:
+      '200':
+        description: Merchandise updated
+  delete:
+    summary: Delete merchandise
+    parameters:
+      - name: id
+        in: query
+        description: ID of the merchandise to delete
+        required: true
+        schema:
+          type: integer
+    responses:
+      '204':
+        description: Merchandise deleted

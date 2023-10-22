@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: This is a sample API for demonstration purposes.
+  version: 1.0.0
+  termsOfService: https://example.com/terms
+  contact:
+    name: API Support
+    email: support@example.com
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  x-custom-metadata: Additional custom metadata for your API
+
+paths:
+  /user:
+    $ref: 'user.yaml'
+  /merchandise:
+    $ref: 'merchandise.yaml'
